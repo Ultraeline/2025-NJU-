@@ -7,7 +7,6 @@
 #include "character.h"
 
 
-
 int main() {
 	srand((unsigned) time(NULL));
 	initgraph(ScreenLen, ScreenLen); //创建界面
@@ -33,6 +32,7 @@ int main() {
 		}
 		CurrentMap -> DrawMap();
 		player.Move(*CurrentMap);
+		player.Interact(CurrentMap);
 		Sleep(20);
 		FlushBatchDraw();
 	}
@@ -44,6 +44,10 @@ int main() {
 	return 0;
 
 }
+
+
+
+
 
 /*static void set() {
 	settextstyle(20, 0, "宋体");

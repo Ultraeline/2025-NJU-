@@ -21,24 +21,31 @@ void Character::Draw() const//绘制角色     (编译器提示将成员函数设为常量，已保证
 	outtextxy(m_x, m_y, m_appearance);
 }
 
-
-Player::Player(int x, int y, const char* appearance, COLORREF color) : Character(x, y, appearance, color) {} //用构造函数初始化玩家的坐标和外形
-
-
-void Player::Move(Maps& map) //移动函数
+void Character::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁W
 {
-	bool RightMove = true;
-	bool LeftMove = true;
-	bool UpMove = true;
-	bool DownMove = true;
-
-	for (int i = 0; i < 200; i++)  //用于判断玩家是否靠着墙壁
+	for (int i = 0; i < map.MapPoint.size(); i++)  
 	{
 		if (m_x + 20 == map.MapPoint[i].m_x && m_y == map.MapPoint[i].m_y && map.MapPoint[i].m_PointType == map.obstcle) RightMove = false;
 		if (m_x - 20 == map.MapPoint[i].m_x && m_y == map.MapPoint[i].m_y && map.MapPoint[i].m_PointType == map.obstcle) LeftMove = false;
 		if (m_y - 20 == map.MapPoint[i].m_y && m_x == map.MapPoint[i].m_x && map.MapPoint[i].m_PointType == map.obstcle) UpMove = false;
 		if (m_y + 20 == map.MapPoint[i].m_y && m_x == map.MapPoint[i].m_x && map.MapPoint[i].m_PointType == map.obstcle) DownMove = false;
 	}
+
+
+}
+
+
+Player::Player(int x, int y, const char* appearance, COLORREF color) : Character(x, y, appearance, color) {} //用构造函数初始化玩家的坐标和外形
+
+
+void Player::Move(Maps& map) //移动函数
+{
+	RightMove = true;
+	LeftMove = true;
+	UpMove = true;
+	DownMove = true;
+	IsAgainstObstcle(map);
+
 	if (GetAsyncKeyState('D') && RightMove) //wasd控制移动
 		m_x += 20;
 	if (GetAsyncKeyState('A') && LeftMove)
@@ -67,21 +74,14 @@ void Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 
 	Dirction dirs[4] = { Right, Left, Up , Down };
 	static Dirction dir = dirs[rand() % 4];
-
-	bool RightMove = true;
-	bool LeftMove = true;
-	bool UpMove = true;
-	bool DownMove = true;
 	static int count = 0;
+	RightMove = true;
+	LeftMove = true;
+	UpMove = true;
+	DownMove = true;
 
-	for (int i = 0; i < 200; i++)  //用于判断鬼是否靠着墙壁
-	{
-		if (m_x + 20 == map.MapPoint[i].m_x && m_y == map.MapPoint[i].m_y && map.MapPoint[i].m_PointType == map.obstcle) RightMove = false;
-		if (m_x - 20 == map.MapPoint[i].m_x && m_y == map.MapPoint[i].m_y && map.MapPoint[i].m_PointType == map.obstcle) LeftMove = false;
-		if (m_y - 20 == map.MapPoint[i].m_y && m_x == map.MapPoint[i].m_x && map.MapPoint[i].m_PointType == map.obstcle) UpMove = false;
-		if (m_y + 20 == map.MapPoint[i].m_y && m_x == map.MapPoint[i].m_x && map.MapPoint[i].m_PointType == map.obstcle) DownMove = false;
+	IsAgainstObstcle(map);
 
-	}
 	if (CurrentBehavior == Safe && count % 4 == 3) //使鬼随机移动，且降低移动速度，并且尽量降低移动方向的随机性，使其移动不会过于杂乱
 	{
 		if (count % 8 == 3)
@@ -101,4 +101,23 @@ void Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	}
 
 	count++;
+}
+
+
+void Player::Interact(Maps*& map)
+{	
+	bool TouchEnemy = false;
+	bool TouchExit = false;
+
+	for (int i = 0; i < map -> MapPoint.size() && !TouchEnemy && !TouchExit; i++)
+	{
+		if (m_x == map -> MapPoint[i].m_x && m_y == map -> MapPoint[i].m_y && map -> MapPoint[i].m_PointType == map -> obstcle)
+			TouchEnemy = true;
+		if (m_x == map -> MapPoint[i].m_x && m_y == map -> MapPoint[i].m_y && map -> MapPoint[i].m_PointType == map -> exit)
+			TouchExit = true;
+	}
+
+	if (TouchExit)
+		++(map);
+
 }

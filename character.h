@@ -16,6 +16,10 @@ public:
 	COLORREF m_color;
 	int m_x, m_y;
 	const char* m_appearance;
+	bool RightMove = true;
+	bool LeftMove = true;
+	bool UpMove = true;
+	bool DownMove = true;
 
 	virtual void Move();
 
@@ -23,6 +27,7 @@ public:
 		
 
 	void Draw() const;//绘制角色     (编译器提示将成员函数设为常量，已保证不修改变量，所以我就加了)
+	void IsAgainstObstcle(Maps& map); //用于判断是否靠着墙壁
 	
 };
 
@@ -33,6 +38,7 @@ public:
 	Player(int x, int y, const char* appearance = _T("我"), COLORREF color = YELLOW); //用构造函数初始化玩家的坐标和外形
 
 	void Move(Maps& map); //移动函数
+	void Interact(Maps*& map);//判断与地图的交互
 	
 };
 
@@ -54,8 +60,6 @@ public:
 	Enemy(int x, int y, const char* appearance = _T("鬼"), COLORREF color = RED);
 
 	void See(); //当敌人看见玩家时，转化为追踪状态
-	
-
 	void Move(Maps& map);//敌人的移动逻辑，可能需要运用追踪算法
 
 };

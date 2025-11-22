@@ -38,6 +38,6 @@ void CreateMap1(Maps& map) //´´½¨map1
 		map.MapPoint.push_back(Maps::Point(0, CharLen * i, Maps::tpye::obstcle));
 		map.MapPoint.push_back(Maps::Point(ScreenLen - CharLen, CharLen * i, Maps::tpye::obstcle));
 	}
-	map.MapPoint.push_back(Maps::Point(CharLen * 8, CharLen * 9, Maps::tpye::exit));
+	map.MapPoint.push_back(Maps::Point(CharLen, CharLen, Maps::tpye::exit));
 
 }
