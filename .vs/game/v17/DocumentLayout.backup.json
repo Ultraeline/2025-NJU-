@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,34 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "map.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
-              "RelativeDocumentMoniker": "map.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h*",
-              "RelativeToolTip": "map.h*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-22T03:32:00.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "map.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
-              "RelativeDocumentMoniker": "map.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp*",
-              "RelativeToolTip": "map.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-22T03:29:55.065Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -58,9 +40,63 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-22T03:21:30.128Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "map.cpp",
+              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
+              "RelativeDocumentMoniker": "map.cpp",
+              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
+              "RelativeToolTip": "map.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-22T03:29:55.065Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "map.h",
+              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
+              "RelativeDocumentMoniker": "map.h",
+              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
+              "RelativeToolTip": "map.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-22T05:07:39.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "character.h",
+              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\character.h",
+              "RelativeDocumentMoniker": "character.h",
+              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\character.h*",
+              "RelativeToolTip": "character.h*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-22T04:07:07.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "character.cpp",
+              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\character.cpp",
+              "RelativeDocumentMoniker": "character.cpp",
+              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\character.cpp*",
+              "RelativeToolTip": "character.cpp*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-22T04:06:57.508Z",
               "EditorCaption": ""
             }
           ]

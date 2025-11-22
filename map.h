@@ -7,6 +7,10 @@
 #include<vector>
 #include <time.h>
 
+constexpr int ScreenLen = 1000; //游戏界面长宽均为1000像素
+constexpr int CharLen = 20; //字体长宽为20像素
+constexpr int Len = ScreenLen / CharLen;
+
 class Maps   // 创建地图
 {
 public:
