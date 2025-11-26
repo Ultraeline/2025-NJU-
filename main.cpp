@@ -5,6 +5,7 @@
 #include<vector>
 #include <time.h>
 #include "map.h"
+#include "createmap.h"
 #include<memory>
 
 
@@ -13,19 +14,16 @@ int main() {
 	initgraph(ScreenLen, ScreenLen); //创建界面
 	settextstyle(20, 0, "宋体"); 
 	Maps* map = new Maps[5];
-
 	CreateMap1(map[0]);
-	Maps* CurrentMap = &map[0];
 	
 	cleardevice();
 
 	while (true)
 	{
-		//std::cout << "test";
-		BeginBatchDraw(); 
+		BeginBatchDraw();
 		cleardevice();
-		CurrentMap->MoveAll(*CurrentMap);
-		CurrentMap->DrawMap();
+		map[mapindex].MoveAll(map[mapindex]);
+		map[mapindex].DrawMap();
 		FlushBatchDraw();
 		Sleep(20);
 	}

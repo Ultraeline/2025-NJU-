@@ -12,12 +12,14 @@
 constexpr int ScreenLen = 1000; //游戏界面长宽均为1000像素
 constexpr int CharLen = 20; //字体长宽为20像素
 constexpr int Len = ScreenLen / CharLen;
+constexpr int MapNum = 5;
+extern int mapindex;
 
 class Maps   // 创建地图
 {
 public:
 	
-	enum PointType
+	enum PointType //记录地图上各点类型
 	{
 		point = 0,
 		obstcle,
@@ -26,23 +28,23 @@ public:
 		enemy
 	};
 
-	class Point
+	class Point //创建一个“点”类
 	{
 	public:
-		int m_x, m_y;
+		int m_x, m_y; //x, y坐标
 		COLORREF m_color = WHITE;
 		PointType m_pointtype = point;
 		const char* m_appearance = "";
 
 		Point(int x, int y);
 
-		virtual ~Point() = default;
+		virtual ~Point() = default; //虚析构函数，防止内存泄漏
 
-		virtual std::unique_ptr<Point> clone() const = 0;
+		virtual std::unique_ptr<Point> clone() const = 0; //克隆函数，用于将类存入动态数组中
 
-		virtual void Move(Maps& map) = 0;
+		virtual void Move(Maps& map) = 0; //移动函数
 		
-		PointType GetType() const { return m_pointtype; }
+		PointType GetType() const { return m_pointtype; }//用于判断子类的类型
 
 	};
 
@@ -50,17 +52,11 @@ public:
 	{
 	public:
 
-		
-
 		Obstcle(int x, int y);
 
-		void Move(Maps& map) override{}
+		void Move(Maps& map) override{} 
 
-
-		std::unique_ptr<Point> clone() const override
-		{
-			return std::make_unique<Obstcle>(*this);
-		}
+		std::unique_ptr<Point> clone() const override;//克隆函数，用于将类存入动态数组中
 	};
 
 	class Exit : public Point
@@ -71,10 +67,7 @@ public:
 
 		void Move(Maps& map) override {}
 
-		std::unique_ptr<Point> clone() const override
-		{
-			return std::make_unique<Exit>(*this);
-		}
+		std::unique_ptr<Point> clone() const override;//克隆函数，用于将类存入动态数组中
 	};
 
 
@@ -85,8 +78,7 @@ public:
 
 		void Move(Maps& map) override{}
 
-		bool RightMove = true;
-
+		bool RightMove = true;//用于判断是否靠着墙壁
 		bool LeftMove = true;
 		bool UpMove = true;
 		bool DownMove = true;
@@ -110,7 +102,7 @@ public:
 		
 		std::unique_ptr<Point> clone() const override;
 		void Move(Maps& map) override; //移动函数
-		void Interact(Maps*& map);//判断与地图的交互
+		void Interact(Maps& map);//判断与地图的交互
 
 	};
 
@@ -120,6 +112,8 @@ public:
 		
 		const COLORREF ColorSafe = RED;
 		const COLORREF ColorDanger = RED;
+		int m_moveCount = 0;
+		int m_currentDirection = 0;
 
 		std::unique_ptr<Point> clone() const override;
 
@@ -145,6 +139,5 @@ public:
 	
 };
 
-void CreateMap1(Maps& map);//创建map1
 
 #endif

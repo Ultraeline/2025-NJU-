@@ -1,4 +1,7 @@
-﻿  main.cpp
+﻿  createmap.cpp
+  createmap.h
+  main.cpp
   map.cpp
   正在生成代码...
+game\x64\Debug\createmap.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
   easyx.vcxproj -> D:\文字游戏 仓库\2025-NJU-\x64\Debug\game.exe
