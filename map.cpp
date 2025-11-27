@@ -8,6 +8,8 @@
 #include<memory>
 
 int mapindex = 0;
+int score = 0;
+bool running = true;
 
 Maps::Point::Point(int x, int y) :
 	m_x(x), m_y(y) {}
@@ -26,6 +28,13 @@ Maps::Exit::Exit(int x, int y) : Point(x, y)//构造函数初始化Exit
 	m_color = GREEN;
 }
 
+Maps::Coin::Coin(int x, int y) : Point(x, y)
+{
+	m_pointtype = coin;
+	m_appearance = "币";
+	m_color = YELLOW;
+}
+
 
 Maps::Character::Character(int x, int y) : Point(x, y) {}
 
@@ -33,7 +42,7 @@ Maps::Player::Player(int x, int y) : Character(x, y)//构造函数初始化Player
 {
 	m_pointtype = player;
 	m_appearance = "我";  
-	m_color = YELLOW;
+	m_color = BLUE;
 }
 
 
@@ -66,6 +75,11 @@ std::unique_ptr<Maps::Point> Maps::Exit::clone() const//克隆函数，用于将类存入动
 	return std::make_unique<Exit>(*this);
 }
 
+std::unique_ptr<Maps::Point> Maps::Coin::clone() const//克隆函数，用于将类存入动态数组中
+{
+	return std::make_unique<Coin>(*this);
+}
+
 void Maps::Character::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
 {
 	for (int i = 0; i < map.MapPoint.size(); i++)
@@ -86,17 +100,33 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 {
 	bool TouchEnemy = false;
 	bool TouchExit = false;
+	bool TouchCoin = false;
 
 	for (int i = 0; i < map.MapPoint.size() && !TouchEnemy && !TouchExit; i++)
 	{
-		if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.obstcle)
+		if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.enemy)
 			TouchEnemy = true;
-		if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.exit)
+		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.exit)
 			TouchExit = true;
+		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.coin)
+		{
+			TouchCoin = true;
+			map.MapPoint.erase(map.MapPoint.begin()+i);
+			--i;
+		}
 	}
 
 	if (TouchExit && mapindex < MapNum - 1)
+	{
 		mapindex++;
+		score += 10;
+	}
+	if (TouchCoin)
+	{
+		score++;
+	}
+
+
 
 }
 

@@ -1,5 +1,4 @@
-#ifndef CREATEMAP_H
-#define CREATEMAP_H
+#pragma once
 
 #include"map.h"
 #include<vector>
@@ -19,4 +18,4 @@ void CreateMap5(Maps& map);
 
 
 
-#endif
+void (*CreateMap[])(Maps&);

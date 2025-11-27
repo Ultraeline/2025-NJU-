@@ -6,28 +6,29 @@
 #include <time.h>
 #include "map.h"
 #include "createmap.h"
+#include "messagescreen.h"
 #include<memory>
 
 
 int main() {
 	srand((unsigned) time(NULL));
-	initgraph(ScreenLen, ScreenLen); //创建界面
+	initgraph(ScreenLen + ExtraWidth, ScreenLen); //创建界面
 	settextstyle(20, 0, "宋体"); 
 	Maps* map = new Maps[5];
-	CreateMap1(map[0]);
-	CreateMap2(map[1]);
-	CreateMap3(map[2]);
-	CreateMap4(map[3]);
-	CreateMap5(map[4]);
+	for (int i = 0; i < MapNum; i++)
+	{
+		CreateMap[i](map[i]);
+	}
 	
 	cleardevice();
 
-	while (true)
+	while (running)
 	{
 		BeginBatchDraw();
 		cleardevice();
 		map[mapindex].MoveAll(map[mapindex]);
 		map[mapindex].DrawMap();
+		DrawMessage();
 		FlushBatchDraw();
 		Sleep(20);
 	}

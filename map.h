@@ -1,5 +1,4 @@
-#ifndef MAP_H
-#define MAP_H
+#pragma once
 
 #include<iostream>
 #include<easyx.h>
@@ -10,11 +9,13 @@
 #include<memory>
 
 constexpr int ScreenLen = 1000; //游戏界面长宽均为1000像素
-constexpr int CharLen = 20; //字体长宽为20像素
+constexpr int CharLen = 20;//字体长宽为20像素
+constexpr int ExtraWidth = 300;
 constexpr int Len = ScreenLen / CharLen;
 constexpr int MapNum = 5;
 extern int mapindex;
-
+extern bool running;
+extern int score;
 class Maps   // 创建地图
 {
 public:
@@ -25,7 +26,8 @@ public:
 		obstcle,
 		exit,
 		player,
-		enemy
+		enemy,
+		coin
 	};
 
 	class Point //创建一个“点”类
@@ -68,6 +70,17 @@ public:
 		void Move(Maps& map) override {}
 
 		std::unique_ptr<Point> clone() const override;//克隆函数，用于将类存入动态数组中
+	};
+
+	class Coin : public Point
+	{
+	public:
+		Coin(int x, int y);
+
+		void Move(Maps& map) override {}
+		
+		std::unique_ptr<Point> clone() const override;//克隆函数，用于将类存入动态数组中
+
 	};
 
 
@@ -132,6 +145,8 @@ public:
 
 	};
 
+
+
 	std::vector<std::unique_ptr<Point>> MapPoint; //创建一个动态数组，记录各点的属性
 
 	void DrawMap(); //绘制地图
@@ -139,5 +154,3 @@ public:
 	
 };
 
-
-#endif
