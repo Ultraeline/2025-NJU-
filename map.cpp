@@ -95,7 +95,7 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 			TouchExit = true;
 	}
 
-	if (TouchExit && mapindex < MapNum)
+	if (TouchExit && mapindex < MapNum - 1)
 		mapindex++;
 
 }
@@ -172,6 +172,18 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 			m_y += CharLen;
 
 		if (m_moveCount > 1000) m_moveCount = 0;
+	}
+	else if (CurrentBehavior == Danger)
+	{
+		int PlayerX = 0, PlayerY = 0;
+		for (int i = 0; i < map.MapPoint.size(); i++)
+		{
+			if (map.MapPoint[i]->GetType() == map.player)
+			{
+
+			}
+		}
+
 	}
 
 	m_moveCount++;

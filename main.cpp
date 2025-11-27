@@ -15,6 +15,10 @@ int main() {
 	settextstyle(20, 0, "ËÎÌו"); 
 	Maps* map = new Maps[5];
 	CreateMap1(map[0]);
+	CreateMap2(map[1]);
+	CreateMap3(map[2]);
+	CreateMap4(map[3]);
+	CreateMap5(map[4]);
 	
 	cleardevice();
 
