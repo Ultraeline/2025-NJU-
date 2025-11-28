@@ -156,7 +156,7 @@ std::unique_ptr<Maps::Point> Maps::Enemy::clone() const //克隆函数，用于将类存入
 }
 
 
-bool Maps::Enemy::See(Maps& map)  //当敌人看见玩家时，转化为追踪状态
+bool Maps::Enemy::See(Maps& map) //当敌人看见玩家时，转化为追踪状态
 {
 	int PlayerX = 0, PlayerY = 0;
 	//找玩家位置
