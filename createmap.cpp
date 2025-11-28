@@ -284,7 +284,7 @@ void CreateMap1(Maps& map) //创建map1
 		{
 			if (MAP1[y][x] == "墙")
 			{
-				map.MapPoint.push_back(std::make_unique<Maps::Obstcle>(CharLen * x, CharLen * y));
+				map.MapPoint.push_back(std::make_unique<Maps::Obstacle>(CharLen * x, CharLen * y));
 			}
 			else if(MAP1[y][x] == "出")
 			{
@@ -318,7 +318,7 @@ void CreateMap2(Maps& map) //创建map1
 		{
 			if (MAP2[y][x] == "墙")
 			{
-				map.MapPoint.push_back(std::make_unique<Maps::Obstcle>(CharLen * x, CharLen * y));
+				map.MapPoint.push_back(std::make_unique<Maps::Obstacle>(CharLen * x, CharLen * y));
 			}
 			else if (MAP2[y][x] == "出")
 			{
@@ -347,7 +347,7 @@ void CreateMap3(Maps& map) //创建map1
 		{
 			if (MAP3[y][x] == "墙")
 			{
-				map.MapPoint.push_back(std::make_unique<Maps::Obstcle>(CharLen * x, CharLen * y));
+				map.MapPoint.push_back(std::make_unique<Maps::Obstacle>(CharLen * x, CharLen * y));
 			}
 			else if (MAP3[y][x] == "出")
 			{
@@ -375,7 +375,7 @@ void CreateMap4(Maps& map) //创建map1
 		{
 			if (MAP4[y][x] == "墙")
 			{
-				map.MapPoint.push_back(std::make_unique<Maps::Obstcle>(CharLen * x, CharLen * y));
+				map.MapPoint.push_back(std::make_unique<Maps::Obstacle>(CharLen * x, CharLen * y));
 			}
 			else if (MAP4[y][x] == "出")
 			{
@@ -405,7 +405,7 @@ void CreateMap5(Maps& map) //创建map1
 		{
 			if (MAP5[y][x] == "墙")
 			{
-				map.MapPoint.push_back(std::make_unique<Maps::Obstcle>(CharLen * x, CharLen * y));
+				map.MapPoint.push_back(std::make_unique<Maps::Obstacle>(CharLen * x, CharLen * y));
 			}
 			else if (MAP5[y][x] == "出")
 			{

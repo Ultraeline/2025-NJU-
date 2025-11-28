@@ -16,6 +16,7 @@ constexpr int MapNum = 5;
 extern int mapindex;
 extern bool running;
 extern int score;
+
 class Maps   // 创建地图
 {
 public:
@@ -23,7 +24,7 @@ public:
 	enum PointType //记录地图上各点类型
 	{
 		point = 0,
-		obstcle,
+		obstacle,
 		exit,
 		player,
 		enemy,
@@ -50,11 +51,11 @@ public:
 
 	};
 
-	class Obstcle : public Point
+	class Obstacle : public Point
 	{
 	public:
 
-		Obstcle(int x, int y);
+		Obstacle(int x, int y);
 
 		void Move(Maps& map) override{} 
 

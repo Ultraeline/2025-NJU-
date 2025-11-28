@@ -31,7 +31,7 @@ int main() {
 		map[mapindex].DrawMap();
 		DrawMessage();
 		FlushBatchDraw();
-		Sleep(20);
+		Sleep(40);
 	}
 
 	EndBatchDraw();

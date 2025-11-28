@@ -10,13 +10,16 @@
 int mapindex = 0;
 int score = 0;
 bool running = true;
+int tempcount = 0;
+bool lastW = false, lastA = false, lastS = false, lastD = false;
+char lastPressedKey = 0;
 
 Maps::Point::Point(int x, int y) :
 	m_x(x), m_y(y) {}
 
-Maps::Obstcle::Obstcle(int x, int y) : Point(x, y) //构造函数初始化Obstacle
+Maps::Obstacle::Obstacle(int x, int y) : Point(x, y) //构造函数初始化Obstacle
 {
-	m_pointtype = obstcle;
+	m_pointtype = obstacle;
 	m_appearance = "墙";  
 	m_color = WHITE;
 }
@@ -65,9 +68,9 @@ void Maps::DrawMap() //绘制地图
 	}
 }
 
-std::unique_ptr<Maps::Point> Maps::Obstcle::clone() const//克隆函数，用于将类存入动态数组中
+std::unique_ptr<Maps::Point> Maps::Obstacle::clone() const//克隆函数，用于将类存入动态数组中
 {
-	return std::make_unique<Obstcle>(*this);
+	return std::make_unique<Obstacle>(*this);
 }
 
 std::unique_ptr<Maps::Point> Maps::Exit::clone() const//克隆函数，用于将类存入动态数组中
@@ -84,10 +87,10 @@ void Maps::Character::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
 {
 	for (int i = 0; i < map.MapPoint.size(); i++)
 	{
-		if (m_x + 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && map.MapPoint[i] -> GetType() == map.obstcle) RightMove = false;
-		if (m_x - 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && map.MapPoint[i] -> GetType() == map.obstcle) LeftMove = false;
-		if (m_y - 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && map.MapPoint[i] -> GetType() == map.obstcle) UpMove = false;
-		if (m_y + 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && map.MapPoint[i] -> GetType() == map.obstcle) DownMove = false;
+		if (m_x + 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && map.MapPoint[i] -> GetType() == map.obstacle) RightMove = false;
+		if (m_x - 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && map.MapPoint[i] -> GetType() == map.obstacle) LeftMove = false;
+		if (m_y - 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && map.MapPoint[i] -> GetType() == map.obstacle) UpMove = false;
+		if (m_y + 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && map.MapPoint[i] -> GetType() == map.obstacle) DownMove = false;
 	}
 }
 
@@ -136,17 +139,54 @@ void Maps::Player::Move(Maps& map) //移动函数
 	LeftMove = true;
 	UpMove = true;
 	DownMove = true;
+	
 	IsAgainstObstcle(map);
 
-	if ((GetAsyncKeyState('D')& 0x8000) && RightMove) //wasd控制移动
-		m_x += 20;
-	if ((GetAsyncKeyState('A') & 0x8000) && LeftMove)
-		m_x -= 20;
-	if ((GetAsyncKeyState('W') & 0x8000) && UpMove)
-		m_y -= 20;
-	if ((GetAsyncKeyState('S') & 0x8000) && DownMove)
-		m_y += 20;
+	bool currentW = (GetAsyncKeyState('W') & 0x8000) != 0;
+	bool currentA = (GetAsyncKeyState('A') & 0x8000) != 0;
+	bool currentS = (GetAsyncKeyState('S') & 0x8000) != 0;
+	bool currentD = (GetAsyncKeyState('D') & 0x8000) != 0;
 
+	if (currentW && !lastW) {
+		lastPressedKey = 'W';
+	}
+	else if (currentA && !lastA) {
+		lastPressedKey = 'A';
+	}
+	else if (currentS && !lastS) {
+		lastPressedKey = 'S';
+	}
+	else if (currentD && !lastD) {
+		lastPressedKey = 'D';
+	}
+	else if (!currentW && !currentA && !currentS && !currentD) {
+		lastPressedKey = 0;
+	}
+	else if(!((lastPressedKey == 'W' && currentW) || (lastPressedKey == 'A' && currentA) || (lastPressedKey == 'S' && currentS) || (lastPressedKey == 'D' && currentD)))
+	{
+		if (currentW)
+			lastPressedKey = 'W';
+		if (currentA)
+			lastPressedKey = 'A';
+		if (currentS)
+			lastPressedKey = 'S';
+		if (currentD)
+			lastPressedKey = 'D';
+
+	}
+
+
+
+	lastW = currentW;
+	lastA = currentA;
+	lastS = currentS;
+	lastD = currentD;
+	switch (lastPressedKey) {
+	case 'W': if (UpMove)  m_y -= CharLen ; break;
+	case 'A': if (LeftMove) m_x -= CharLen; break;
+	case 'S': if (DownMove) m_y += CharLen; break;
+	case 'D': if (RightMove) m_x += CharLen; break;
+	}
 	Interact(map);//与地图的交互
 }
 
@@ -167,7 +207,7 @@ bool Maps::Enemy::See(Maps& map) {
 		}
 	}
 
-	const int VIEW_RANGE = CharLen * 8;
+	const int VIEW_RANGE = CharLen * 12;
 	int distanceX = abs(m_x - PlayerX);
 	int distanceY = abs(m_y - PlayerY);
 
@@ -186,7 +226,7 @@ bool Maps::Enemy::See(Maps& map) {
 		for (int i = 0; i < map.MapPoint.size(); i++) {
 			if (map.MapPoint[i]->m_x == checkX &&
 				map.MapPoint[i]->m_y == checkY &&
-				map.MapPoint[i]->GetType() == obstacle) {
+				map.MapPoint[i]->GetType() == map.obstacle) {
 				return false;  // 被墙遮挡
 			}
 		}
@@ -215,11 +255,12 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	DownMove = true;
 	static int PlayerX = 0, PlayerY = 0;
 	bool ChangeSafe = false;
-	if (m_x == PlayerX && m_y == PlayerY)
+	if (m_x == PlayerX && m_y == PlayerY || (m_moveCount - tempcount) % 4 == 0)
 		ChangeSafe = true;
 	IsAgainstObstcle(map);
 	if (See(map))
 	{
+		tempcount = m_moveCount;
 		bool ChangeSafe = false;
 		CurrentBehavior = Danger;
 		m_color = ColorDanger;
