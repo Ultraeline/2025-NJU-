@@ -30,6 +30,9 @@
     <ClCompile Include="messagescreen.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BGM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
