@@ -159,7 +159,26 @@ bool Maps::Enemy::See() //当敌人看见玩家时，转化为追踪状态
 {
 	return true;
 }
+bool Maps::Enemy::See(Maps& map) 
+{
+	int PlayerX = 0, PlayerY = 0;
+	//找玩家位置
+	for (int i = 0; i < map.MapPoint.size(); i++)
+	{
+		if (map.MapPoint[i]->GetType() == map.player)
+		{
+			PlayerX = map.MapPoint[i]->m_x;
+			PlayerY = map.MapPoint[i]->m_y;
+		}
+	}
+	
+	const int VIEW_RANGE=CharLen*8;
+	int distanceX = abs(m_x - playerX); 
+	int distanceY = abs(m_y - playerY); 
 
+	// 若水平+垂直距离都在视野内，返回true（表示“看见”）；否则返回false
+	return (distanceX+distanceY <= VIEW_RANGE);
+}
 
 
 void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
