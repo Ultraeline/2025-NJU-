@@ -245,30 +245,55 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 		
 		if (m_moveCount % 2 == 0)
 		{
-			if (abs(m_x - PlayerX) > abs(m_y - PlayerY))
+			if (m_x - PlayerX >= 0 && m_y - PlayerY >= 0)
 			{
-				if (m_x > PlayerX)
+				if (m_x - PlayerX > m_y - PlayerY && LeftMove)
 				{
 					m_x -= CharLen;
 				}
-				else
-				{
-					m_x += CharLen;
-				}
-			}
-			else
-			{
-				if (m_y > PlayerY)
+				else if( UpMove )
 				{
 					m_y -= CharLen;
 				}
-				else
+			}
+			else if (m_x - PlayerX >= 0 && m_y - PlayerY <= 0)
+			{
+				if (m_x - PlayerX > PlayerY - m_y && LeftMove)
+				{
+					m_x -= CharLen;
+				}
+				else if (DownMove)
 				{
 					m_y += CharLen;
 				}
 			}
-
-
+			else if (m_x - PlayerX <= 0 && m_y - PlayerY >= 0)
+			{
+				if ( PlayerX - m_x> PlayerY - m_y && RightMove)
+				{
+					m_x += CharLen;
+				}
+				else if (UpMove)
+				{
+					m_y -= CharLen;
+				}
+			}
+			else if (m_x - PlayerX <= 0 && m_y - PlayerY <= 0)
+			{
+				if ( PlayerX - m_x > PlayerY - m_y && RightMove)
+				{
+					m_x += CharLen;
+				}
+				else if (DownMove)
+				{
+					m_y += CharLen;
+				}
+			}
+			else
+			{
+				ChangeSafe = true;
+				CurrentBehavior = Safe;
+			}
 		}
 
 
