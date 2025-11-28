@@ -156,25 +156,47 @@ std::unique_ptr<Maps::Point> Maps::Enemy::clone() const //克隆函数，用于将类存入
 }
 
 
-bool Maps::Enemy::See(Maps& map) //当敌人看见玩家时，转化为追踪状态
-{
+bool Maps::Enemy::See(Maps& map) {
+	// 找玩家的位置
 	int PlayerX = 0, PlayerY = 0;
-	//找玩家位置
-	for (int i = 0; i < map.MapPoint.size(); i++)
-	{
-		if (map.MapPoint[i]->GetType() == map.player)
-		{
+	for (int i = 0; i < map.MapPoint.size(); i++) {
+		if (map.MapPoint[i]->GetType() == map.player) {
 			PlayerX = map.MapPoint[i]->m_x;
 			PlayerY = map.MapPoint[i]->m_y;
+			break;
 		}
 	}
-	
-	const int VIEW_RANGE=CharLen*8;
-	int distanceX = abs(m_x - PlayerX); 
-	int distanceY = abs(m_y - PlayerY); 
 
-	// 若水平+垂直距离都在视野内，返回true（表示“看见”）；否则返回false
-	return (distanceX+distanceY <= VIEW_RANGE);
+	const int VIEW_RANGE = CharLen * 8;
+	int distanceX = abs(m_x - PlayerX);
+	int distanceY = abs(m_y - PlayerY);
+
+	if (distanceX + distanceY > VIEW_RANGE) return false;//太远直接false
+
+	// 计算视线方向
+	int dx = (PlayerX > m_x) ? CharLen : (PlayerX < m_x) ? -CharLen : 0;
+	int dy = (PlayerY > m_y) ? CharLen : (PlayerY < m_y) ? -CharLen : 0;
+
+	// 沿视线方向检查是否有墙遮挡
+	int checkX = m_x + dx;
+	int checkY = m_y + dy;
+
+	while (checkX != PlayerX || checkY != PlayerY) {
+		// 检查当前位置是否有障碍物
+		for (int i = 0; i < map.MapPoint.size(); i++) {
+			if (map.MapPoint[i]->m_x == checkX &&
+				map.MapPoint[i]->m_y == checkY &&
+				map.MapPoint[i]->GetType() == obstacle) {
+				return false;  // 被墙遮挡
+			}
+		}
+
+		// 向玩家方向移动一格
+		if (checkX != PlayerX) checkX += dx;
+		if (checkY != PlayerY) checkY += dy;
+	}
+
+	return true;  // 可以看见玩家
 }
 
 
