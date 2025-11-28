@@ -155,11 +155,8 @@ std::unique_ptr<Maps::Point> Maps::Enemy::clone() const //克隆函数，用于将类存入
 	return std::make_unique<Enemy>(*this);
 }
 
-bool Maps::Enemy::See() //当敌人看见玩家时，转化为追踪状态
-{
-	return true;
-}
-bool Maps::Enemy::See(Maps& map) 
+
+bool Maps::Enemy::See(Maps& map)  //当敌人看见玩家时，转化为追踪状态
 {
 	int PlayerX = 0, PlayerY = 0;
 	//找玩家位置
@@ -173,8 +170,8 @@ bool Maps::Enemy::See(Maps& map)
 	}
 	
 	const int VIEW_RANGE=CharLen*8;
-	int distanceX = abs(m_x - playerX); 
-	int distanceY = abs(m_y - playerY); 
+	int distanceX = abs(m_x - PlayerX); 
+	int distanceY = abs(m_y - PlayerY); 
 
 	// 若水平+垂直距离都在视野内，返回true（表示“看见”）；否则返回false
 	return (distanceX+distanceY <= VIEW_RANGE);
@@ -194,16 +191,26 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	LeftMove = true;
 	UpMove = true;
 	DownMove = true;
+	static int PlayerX = 0, PlayerY = 0;
 	bool ChangeSafe = false;
-
+	if (m_x == PlayerX && m_y == PlayerY)
+		ChangeSafe = true;
 	IsAgainstObstcle(map);
-	if (See())
+	if (See(map))
 	{
 		bool ChangeSafe = false;
 		CurrentBehavior = Danger;
 		m_color = ColorDanger;
+		for (int i = 0; i < map.MapPoint.size(); i++)
+		{
+			if (map.MapPoint[i]->GetType() == map.player)
+			{
+				PlayerX = map.MapPoint[i]->m_x;
+				PlayerY = map.MapPoint[i]->m_y;
+			}
+		}
 	}
-	else if(!See() && ChangeSafe)
+	else if(!See(map) && ChangeSafe)
 	{
 		CurrentBehavior = Safe;
 		m_color = ColorSafe;
@@ -232,19 +239,10 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 		else if (dir == Down && DownMove)
 			m_y += CharLen;
 		
-		if (m_moveCount > 1000) m_moveCount = 0;
 	}
 	else if (CurrentBehavior == Danger)
 	{
-		int PlayerX = 0, PlayerY = 0;
-		for (int i = 0; i < map.MapPoint.size(); i++)
-		{
-			if (map.MapPoint[i]->GetType() == map.player)
-			{
-				PlayerX = map.MapPoint[i]->m_x;
-				PlayerY = map.MapPoint[i]->m_y;
-			}
-		}
+		
 		if (m_moveCount % 2 == 0)
 		{
 			if (abs(m_x - PlayerX) > abs(m_y - PlayerY))
@@ -275,6 +273,7 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 
 
 	}
+	if (m_moveCount > 1000) m_moveCount = 0;
 	m_moveCount++;
 }
 
