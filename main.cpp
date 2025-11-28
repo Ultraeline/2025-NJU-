@@ -8,8 +8,9 @@
 #include "createmap.h"
 #include "messagescreen.h"
 #include<memory>
+#include "BGM.h"
 
-
+AudioManager audioManager;
 int main() {
 	srand((unsigned) time(NULL));
 	initgraph(ScreenLen + ExtraWidth, ScreenLen); //创建界面
@@ -19,7 +20,7 @@ int main() {
 	{
 		CreateMap[i](map[i]);
 	}
-	
+	audioManager.PlayBGM("normal.mp3");
 	cleardevice();
 
 	while (running)
