@@ -42,7 +42,7 @@ Maps::Player::Player(int x, int y) : Character(x, y)//构造函数初始化Player
 {
 	m_pointtype = player;
 	m_appearance = "我";  
-	m_color = BLUE;
+	m_color = RGB(0, 255, 255);
 }
 
 
@@ -50,7 +50,7 @@ Maps::Enemy::Enemy(int x, int y) : Character(x, y)//构造函数初始化Enemy
 {
 	m_pointtype = enemy;
 	m_appearance = "鬼";  
-	m_color = RED;
+	m_color = RGB(255,189,189);
 	m_moveCount = rand() % 8;
 	m_currentDirection = rand() % 4;
 }
@@ -155,11 +155,27 @@ std::unique_ptr<Maps::Point> Maps::Enemy::clone() const //克隆函数，用于将类存入
 	return std::make_unique<Enemy>(*this);
 }
 
-void Maps::Enemy::See() //当敌人看见玩家时，转化为追踪状态
+
+bool Maps::Enemy::See(Maps& map) //当敌人看见玩家时，转化为追踪状态
 {
+	int PlayerX = 0, PlayerY = 0;
+	//找玩家位置
+	for (int i = 0; i < map.MapPoint.size(); i++)
+	{
+		if (map.MapPoint[i]->GetType() == map.player)
+		{
+			PlayerX = map.MapPoint[i]->m_x;
+			PlayerY = map.MapPoint[i]->m_y;
+		}
+	}
+	
+	const int VIEW_RANGE=CharLen*8;
+	int distanceX = abs(m_x - PlayerX); 
+	int distanceY = abs(m_y - PlayerY); 
 
+	// 若水平+垂直距离都在视野内，返回true（表示“看见”）；否则返回false
+	return (distanceX+distanceY <= VIEW_RANGE);
 }
-
 
 
 void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
@@ -175,8 +191,30 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	LeftMove = true;
 	UpMove = true;
 	DownMove = true;
-
+	static int PlayerX = 0, PlayerY = 0;
+	bool ChangeSafe = false;
+	if (m_x == PlayerX && m_y == PlayerY)
+		ChangeSafe = true;
 	IsAgainstObstcle(map);
+	if (See(map))
+	{
+		bool ChangeSafe = false;
+		CurrentBehavior = Danger;
+		m_color = ColorDanger;
+		for (int i = 0; i < map.MapPoint.size(); i++)
+		{
+			if (map.MapPoint[i]->GetType() == map.player)
+			{
+				PlayerX = map.MapPoint[i]->m_x;
+				PlayerY = map.MapPoint[i]->m_y;
+			}
+		}
+	}
+	else if(!See(map) && ChangeSafe)
+	{
+		CurrentBehavior = Safe;
+		m_color = ColorSafe;
+	}
 
 	if (CurrentBehavior == Safe && m_moveCount % 4 == 0) //使鬼随机移动，且降低移动速度，并且尽量降低移动方向的随机性，使其移动不会过于杂乱
 	{
@@ -200,22 +238,42 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 			m_y -= CharLen;
 		else if (dir == Down && DownMove)
 			m_y += CharLen;
-
-		if (m_moveCount > 1000) m_moveCount = 0;
+		
 	}
 	else if (CurrentBehavior == Danger)
 	{
-		int PlayerX = 0, PlayerY = 0;
-		for (int i = 0; i < map.MapPoint.size(); i++)
+		
+		if (m_moveCount % 2 == 0)
 		{
-			if (map.MapPoint[i]->GetType() == map.player)
+			if (abs(m_x - PlayerX) > abs(m_y - PlayerY))
 			{
-
+				if (m_x > PlayerX)
+				{
+					m_x -= CharLen;
+				}
+				else
+				{
+					m_x += CharLen;
+				}
 			}
+			else
+			{
+				if (m_y > PlayerY)
+				{
+					m_y -= CharLen;
+				}
+				else
+				{
+					m_y += CharLen;
+				}
+			}
+
+
 		}
 
-	}
 
+	}
+	if (m_moveCount > 1000) m_moveCount = 0;
 	m_moveCount++;
 }
 

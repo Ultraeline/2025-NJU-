@@ -123,7 +123,7 @@ public:
 	{
 	public:
 		
-		const COLORREF ColorSafe = RED;
+		const COLORREF ColorSafe = RGB(255, 189, 189);
 		const COLORREF ColorDanger = RED;
 		int m_moveCount = 0;
 		int m_currentDirection = 0;
@@ -140,7 +140,7 @@ public:
 
 		Enemy(int x, int y);//构造函数初始化敌人
 
-		void See(); //当敌人看见玩家时，转化为追踪状态
+		bool See(Maps& map); //看见玩家时，返回true，反之false
 		void Move(Maps& map) override;//敌人的移动逻辑，可能需要运用追踪算法
 
 	};
