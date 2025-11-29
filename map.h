@@ -16,6 +16,7 @@ constexpr int MapNum = 5;
 extern int mapindex;
 extern bool running;
 extern int score;
+extern int keynum;
 
 class Maps   // 创建地图
 {
@@ -28,7 +29,9 @@ public:
 		exit,
 		player,
 		enemy,
-		coin
+		coin,
+		key,
+		door
 	};
 
 	class Point //创建一个“点”类
@@ -85,6 +88,28 @@ public:
 	};
 
 
+	class Key : public Point
+	{
+	public:
+		Key(int x, int y);
+
+		void Move(Maps& map) override {}
+
+		std::unique_ptr<Point> clone() const override;//克隆函数，用于将类存入动态数组中
+
+	};
+
+	class Door : public Point
+	{
+	public:
+		Door(int x, int y);
+
+		void Move(Maps& map) override {}
+
+		std::unique_ptr<Point> clone() const override;//克隆函数，用于将类存入动态数组中
+
+	};
+
 
 	class Character : public Point //创建一个类，表示各个角色，如玩家，鬼等的坐标和外形以及移动方式等
 	{
@@ -100,7 +125,7 @@ public:
 
 		Character(int x, int y);
 
-		void IsAgainstObstcle(Maps& map); //用于判断是否靠着墙壁
+		virtual void IsAgainstObstcle(Maps& map) = 0; //用于判断是否靠着墙壁
 		
 		virtual ~Character() = default;
 	};
@@ -117,6 +142,7 @@ public:
 		std::unique_ptr<Point> clone() const override;
 		void Move(Maps& map) override; //移动函数
 		void Interact(Maps& map);//判断与地图的交互
+		void IsAgainstObstcle(Maps& map) override;
 
 	};
 
@@ -143,6 +169,7 @@ public:
 
 		bool See(Maps& map); //看见玩家时，返回true，反之false
 		void Move(Maps& map) override;//敌人的移动逻辑，可能需要运用追踪算法
+		void IsAgainstObstcle(Maps& map) override;
 
 	};
 

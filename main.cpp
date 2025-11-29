@@ -18,7 +18,7 @@ int main() {
 	Maps* map = new Maps[5];
 	for (int i = 0; i < MapNum; i++)
 	{
-		CreateMap[i](map[i]);
+		CreateMap(map[i], i);
 	}
 	audioManager.PlayBGM("normal.mp3");
 	cleardevice();

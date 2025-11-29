@@ -9,6 +9,7 @@
 
 int mapindex = 0;
 int score = 0;
+int keynum = 0;
 bool running = true;
 int tempcount = 0;
 bool lastW = false, lastA = false, lastS = false, lastD = false;
@@ -37,6 +38,21 @@ Maps::Coin::Coin(int x, int y) : Point(x, y)
 	m_appearance = "币";
 	m_color = YELLOW;
 }
+
+Maps::Key::Key(int x, int y) : Point(x, y)
+{
+	m_pointtype = key;
+	m_appearance = "钥";
+	m_color = YELLOW;
+}
+
+Maps::Door::Door(int x, int y) : Point(x, y)
+{
+	m_pointtype = door;
+	m_appearance = "门";
+	m_color = BROWN;
+}
+
 
 
 Maps::Character::Character(int x, int y) : Point(x, y) {}
@@ -83,14 +99,35 @@ std::unique_ptr<Maps::Point> Maps::Coin::clone() const//克隆函数，用于将类存入动
 	return std::make_unique<Coin>(*this);
 }
 
-void Maps::Character::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
+std::unique_ptr<Maps::Point> Maps::Key::clone() const//克隆函数，用于将类存入动态数组中
+{
+	return std::make_unique<Key>(*this);
+}
+
+std::unique_ptr<Maps::Point> Maps::Door::clone() const//克隆函数，用于将类存入动态数组中
+{
+	return std::make_unique<Door>(*this);
+}
+
+void Maps::Player::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
 {
 	for (int i = 0; i < map.MapPoint.size(); i++)
 	{
-		if (m_x + 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && map.MapPoint[i] -> GetType() == map.obstacle) RightMove = false;
-		if (m_x - 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && map.MapPoint[i] -> GetType() == map.obstacle) LeftMove = false;
-		if (m_y - 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && map.MapPoint[i] -> GetType() == map.obstacle) UpMove = false;
-		if (m_y + 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && map.MapPoint[i] -> GetType() == map.obstacle) DownMove = false;
+		if (m_x + 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) RightMove = false;
+		if (m_x - 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) LeftMove = false;
+		if (m_y - 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) UpMove = false;
+		if (m_y + 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) DownMove = false;
+	}
+}
+
+void Maps::Enemy::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
+{
+	for (int i = 0; i < map.MapPoint.size(); i++)
+	{
+		if (m_x + 20 == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) RightMove = false;
+		if (m_x - 20 == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) LeftMove = false;
+		if (m_y - 20 == map.MapPoint[i]->m_y && m_x == map.MapPoint[i]->m_x && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) UpMove = false;
+		if (m_y + 20 == map.MapPoint[i]->m_y && m_x == map.MapPoint[i]->m_x && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) DownMove = false;
 	}
 }
 
@@ -104,29 +141,46 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 	bool TouchEnemy = false;
 	bool TouchExit = false;
 	bool TouchCoin = false;
-
-	for (int i = 0; i < map.MapPoint.size() && !TouchEnemy && !TouchExit; i++)
+	bool TouchKey = false;
+	bool TouchDoor = false;
+	for (int i = 0; i < map.MapPoint.size() && !TouchEnemy && !TouchExit && !TouchCoin && !TouchKey && !TouchDoor; i++)
 	{
 		if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.enemy)
 			TouchEnemy = true;
 		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.exit)
 			TouchExit = true;
 		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.coin)
-		{
 			TouchCoin = true;
-			map.MapPoint.erase(map.MapPoint.begin()+i);
+		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.key)
+			TouchKey = true;
+		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.door)
+			TouchDoor = true;
+
+		if (TouchExit && mapindex < MapNum - 1)
+		{
+			mapindex++;
+			score += 10;
+		}
+		else if (TouchCoin)
+		{
+			map.MapPoint.erase(map.MapPoint.begin() + i);
+			--i;
+			score++;
+		}
+		else if (TouchKey)
+		{
+			map.MapPoint.erase(map.MapPoint.begin() + i);
+			--i;
+			keynum++;
+		}
+		else if (TouchDoor)
+		{
+			keynum--;
+			map.MapPoint.erase(map.MapPoint.begin() + i);
 			--i;
 		}
-	}
 
-	if (TouchExit && mapindex < MapNum - 1)
-	{
-		mapindex++;
-		score += 10;
-	}
-	if (TouchCoin)
-	{
-		score++;
+
 	}
 
 
@@ -226,7 +280,7 @@ bool Maps::Enemy::See(Maps& map) {
 		for (int i = 0; i < map.MapPoint.size(); i++) {
 			if (map.MapPoint[i]->m_x == checkX &&
 				map.MapPoint[i]->m_y == checkY &&
-				map.MapPoint[i]->GetType() == map.obstacle) {
+				(map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) {
 				return false;  // 被墙遮挡
 			}
 		}
