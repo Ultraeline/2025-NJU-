@@ -157,7 +157,7 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 			TouchDoor = true;
 
 		if (TouchExit && mapindex < MapNum - 1)
-		{
+		{   
 			mapindex++;
 			score += 10;
 		}
@@ -307,7 +307,6 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	LeftMove = true;
 	UpMove = true;
 	DownMove = true;
-	static int PlayerX = 0, PlayerY = 0;
 	bool ChangeSafe = false;
 	if (m_x == PlayerX && m_y == PlayerY || (m_moveCount - tempcount) % 4 == 0)
 		ChangeSafe = true;
@@ -345,7 +344,7 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 			m_currentDirection = rand() % 4;
 		}
 
-		Direction dir = dirs[m_currentDirection];
+		Direction dir = dirs[m_currentDirection];    
 
 		if (dir == Right && RightMove)
 			m_x += CharLen;
@@ -364,46 +363,54 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 		{
 			if (m_x - PlayerX >= 0 && m_y - PlayerY >= 0)
 			{
-				if (m_x - PlayerX > m_y - PlayerY && LeftMove)
+				if (m_x - PlayerX > m_y - PlayerY)
 				{
-					m_x -= CharLen;
+					if (LeftMove) m_x -= CharLen;
+					else m_y -= CharLen;
 				}
-				else if( UpMove )
+				else
 				{
-					m_y -= CharLen;
+					if (UpMove) m_y -= CharLen;
+					else if (LeftMove) m_x -= CharLen;
 				}
 			}
 			else if (m_x - PlayerX >= 0 && m_y - PlayerY <= 0)
 			{
-				if (m_x - PlayerX > PlayerY - m_y && LeftMove)
+				if (m_x - PlayerX > PlayerY - m_y)
 				{
-					m_x -= CharLen;
+					if (LeftMove) m_x -= CharLen;
+					else m_y += CharLen;
 				}
-				else if (DownMove)
+				else
 				{
-					m_y += CharLen;
+					if (DownMove) m_y += CharLen;
+					else if(LeftMove) m_x -= CharLen;
 				}
 			}
 			else if (m_x - PlayerX <= 0 && m_y - PlayerY >= 0)
 			{
-				if ( PlayerX - m_x> PlayerY - m_y && RightMove)
+				if ( PlayerX - m_x> m_y - PlayerY)
 				{
-					m_x += CharLen;
+					if (RightMove) m_x += CharLen;
+					else if(UpMove) m_y -= CharLen;
 				}
-				else if (UpMove)
+				else
 				{
-					m_y -= CharLen;
+					if (UpMove) m_y -= CharLen;
+					else if(RightMove) m_x += CharLen;
 				}
 			}
 			else if (m_x - PlayerX <= 0 && m_y - PlayerY <= 0)
 			{
-				if ( PlayerX - m_x > PlayerY - m_y && RightMove)
+				if ( PlayerX - m_x > PlayerY - m_y)
 				{
-					m_x += CharLen;
+					if (RightMove) m_x += CharLen;
+					else if(DownMove)m_y += CharLen;
 				}
-				else if (DownMove)
+				else
 				{
-					m_y += CharLen;
+					if (DownMove) m_y += CharLen;
+					else if (RightMove)m_x  += CharLen;
 				}
 			}
 			else

@@ -148,6 +148,10 @@ public:
 
 	class Enemy : public Character //¥¥Ω®µ–»À
 	{
+	private:
+		int PlayerX = 0, PlayerY = 0;
+		
+
 	public:
 		
 		const COLORREF ColorSafe = RGB(255, 189, 189);
