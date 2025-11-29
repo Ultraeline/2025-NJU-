@@ -1,41 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\",
+  "WorkspaceRootPath": "D:\\github\\2025-NJU-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\2025-NJU-\\BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\messagescreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:messagescreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\BGM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:BGM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\github\\2025-NJU-\\messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -46,67 +46,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "BGM.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.h",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\BGM.h",
               "RelativeDocumentMoniker": "BGM.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.h",
+              "ToolTip": "D:\\github\\2025-NJU-\\BGM.h",
               "RelativeToolTip": "BGM.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T12:58:46.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T12:58:46.556Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "map.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\map.cpp",
               "RelativeDocumentMoniker": "map.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
+              "ToolTip": "D:\\github\\2025-NJU-\\map.cpp",
               "RelativeToolTip": "map.cpp",
               "ViewState": "AgIAAIsAAAAAAAAAAAAkwJ8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-28T07:57:05.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:05.044Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "messagescreen.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.cpp",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\messagescreen.cpp",
               "RelativeDocumentMoniker": "messagescreen.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.cpp",
+              "ToolTip": "D:\\github\\2025-NJU-\\messagescreen.cpp",
               "RelativeToolTip": "messagescreen.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-28T07:57:05.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:05.597Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "BGM.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.cpp",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\BGM.cpp",
               "RelativeDocumentMoniker": "BGM.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.cpp",
+              "ToolTip": "D:\\github\\2025-NJU-\\BGM.cpp",
               "RelativeToolTip": "BGM.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-28T13:34:22.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T13:34:22.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp",
+              "ToolTip": "D:\\github\\2025-NJU-\\main.cpp",
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -115,55 +111,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "createmap.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.cpp",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\createmap.cpp",
               "RelativeDocumentMoniker": "createmap.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.cpp",
+              "ToolTip": "D:\\github\\2025-NJU-\\createmap.cpp",
               "RelativeToolTip": "createmap.cpp",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAB4AAACGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAhAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-28T07:57:03.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "createmap.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.h",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\createmap.h",
               "RelativeDocumentMoniker": "createmap.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.h",
+              "ToolTip": "D:\\github\\2025-NJU-\\createmap.h",
               "RelativeToolTip": "createmap.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T07:57:02.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:02.265Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "map.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\map.h",
               "RelativeDocumentMoniker": "map.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
+              "ToolTip": "D:\\github\\2025-NJU-\\map.h",
               "RelativeToolTip": "map.h",
               "ViewState": "AgIAAGMAAAAAAAAAAAAAAKsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T07:57:00.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:00.498Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "messagescreen.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.h",
+              "DocumentMoniker": "D:\\github\\2025-NJU-\\messagescreen.h",
               "RelativeDocumentMoniker": "messagescreen.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.h",
+              "ToolTip": "D:\\github\\2025-NJU-\\messagescreen.h",
               "RelativeToolTip": "messagescreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T07:57:01.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:01.53Z"
             }
           ]
         }
