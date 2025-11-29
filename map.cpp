@@ -359,7 +359,7 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	else if (CurrentBehavior == Danger)
 	{
 		
-		if (m_moveCount % 2 == 0)
+		if (m_moveCount % 3 == 0)
 		{
 			if (m_x - PlayerX >= 0 && m_y - PlayerY >= 0)
 			{
