@@ -10,6 +10,7 @@
 int mapindex = 0;
 int score = 0;
 int keynum = 0;
+bool isDead = false; // 初始化玩家未死亡
 bool running = true;
 int tempcount = 0;
 bool lastW = false, lastA = false, lastS = false, lastD = false;
@@ -178,6 +179,11 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 			keynum--;
 			map.MapPoint.erase(map.MapPoint.begin() + i);
 			--i;
+		}
+		if (TouchEnemy)
+		{
+			isDead = true; // 标记玩家死亡
+			running = false; // 暂停游戏主循环
 		}
 
 

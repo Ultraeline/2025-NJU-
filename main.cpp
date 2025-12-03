@@ -9,6 +9,7 @@
 #include "messagescreen.h"
 #include<memory>
 #include "BGM.h"
+#include "gameover.h"
 
 AudioManager audioManager;
 int main() {
@@ -32,6 +33,21 @@ int main() {
 		DrawMessage();
 		FlushBatchDraw();
 		Sleep(40);
+	}
+	if (isDead) {
+		HandleGameOver();
+		// 重新启动游戏循环
+		running = true;
+		while (running)
+		{
+			BeginBatchDraw();
+			cleardevice();
+			map[mapindex].MoveAll(map[mapindex]);
+			map[mapindex].DrawMap();
+			DrawMessage();
+			FlushBatchDraw();
+			Sleep(40);
+		}
 	}
 
 	EndBatchDraw();

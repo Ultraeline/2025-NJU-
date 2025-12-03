@@ -127,11 +127,13 @@
     <ClCompile Include="BGM.cpp" />
     <ClCompile Include="createmap.cpp" />
     <ClCompile Include="createmap.h" />
+    <ClCompile Include="gameover.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="messagescreen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gameover.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="messagescreen.h" />
   </ItemGroup>

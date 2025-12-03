@@ -1,41 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\",
+  "WorkspaceRootPath": "C:\\Users\\41373\\Desktop\\2025-NJU-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\gameover.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:gameover.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\gameover.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:gameover.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:createmap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:messagescreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\BGM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:BGM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|C:\\Users\\41373\\Desktop\\2025-NJU-\\messagescreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FEF1B8BB-0337-4322-9DB8-1F213178BFAF}|easyx.vcxproj|solutionrelative:messagescreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\41373\\Desktop\\2025-NJU-\\BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BGM.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -46,124 +54,148 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BGM.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.h",
-              "RelativeDocumentMoniker": "BGM.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.h",
-              "RelativeToolTip": "BGM.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "gameover.h",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\gameover.h",
+              "RelativeDocumentMoniker": "gameover.h",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\gameover.h",
+              "RelativeToolTip": "gameover.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T12:58:46.556Z",
+              "WhenOpened": "2025-12-02T15:19:44.706Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "map.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
-              "RelativeDocumentMoniker": "map.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.cpp",
-              "RelativeToolTip": "map.cpp",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAGkBAAAVAAAAAAAAAA==",
+              "Title": "gameover.cpp",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\gameover.cpp",
+              "RelativeDocumentMoniker": "gameover.cpp",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\gameover.cpp",
+              "RelativeToolTip": "gameover.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-28T07:57:05.044Z",
+              "WhenOpened": "2025-12-02T15:18:44.004Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "messagescreen.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.cpp",
-              "RelativeDocumentMoniker": "messagescreen.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.cpp",
-              "RelativeToolTip": "messagescreen.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-28T07:57:05.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "BGM.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.cpp",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\BGM.cpp",
               "RelativeDocumentMoniker": "BGM.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\BGM.cpp",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\BGM.cpp",
               "RelativeToolTip": "BGM.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-28T13:34:22.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T13:34:22.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\main.cpp",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-28T07:57:04.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "createmap.cpp",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.cpp",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\createmap.cpp",
               "RelativeDocumentMoniker": "createmap.cpp",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.cpp*",
-              "RelativeToolTip": "createmap.cpp*",
-              "ViewState": "AgIAAA4BAAAAAAAAAAAAACUBAAAEAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\createmap.cpp",
+              "RelativeToolTip": "createmap.cpp",
+              "ViewState": "AgIAACkBAAAAAAAAAAAAACUBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-28T07:57:03.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "messagescreen.cpp",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\messagescreen.cpp",
+              "RelativeDocumentMoniker": "messagescreen.cpp",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\messagescreen.cpp",
+              "RelativeToolTip": "messagescreen.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-28T07:57:05.597Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "map.cpp",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\map.cpp",
+              "RelativeDocumentMoniker": "map.cpp",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\map.cpp",
+              "RelativeToolTip": "map.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-28T07:57:05.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BGM.h",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\BGM.h",
+              "RelativeDocumentMoniker": "BGM.h",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\BGM.h",
+              "RelativeToolTip": "BGM.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-28T12:58:46.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "createmap.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.h",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\createmap.h",
               "RelativeDocumentMoniker": "createmap.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\createmap.h",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\createmap.h",
               "RelativeToolTip": "createmap.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T07:57:02.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:02.265Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "map.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\map.h",
               "RelativeDocumentMoniker": "map.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\map.h",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\map.h",
               "RelativeToolTip": "map.h",
               "ViewState": "AgIAAJkAAAAAAAAAAAAAALIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T07:57:00.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:00.498Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "messagescreen.h",
-              "DocumentMoniker": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.h",
+              "DocumentMoniker": "C:\\Users\\41373\\Desktop\\2025-NJU-\\messagescreen.h",
               "RelativeDocumentMoniker": "messagescreen.h",
-              "ToolTip": "D:\\\u6587\u5B57\u6E38\u620F \u4ED3\u5E93\\2025-NJU-\\messagescreen.h",
+              "ToolTip": "C:\\Users\\41373\\Desktop\\2025-NJU-\\messagescreen.h",
               "RelativeToolTip": "messagescreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-28T07:57:01.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T07:57:01.53Z"
             }
           ]
         }

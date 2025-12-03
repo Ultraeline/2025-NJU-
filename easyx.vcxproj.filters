@@ -33,12 +33,18 @@
     <ClCompile Include="BGM.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="gameover.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="messagescreen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gameover.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
