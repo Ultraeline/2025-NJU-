@@ -1,2 +1,17 @@
 ﻿  createmap.cpp
-  easyx.vcxproj -> D:\文字游戏 仓库\2025-NJU-\x64\Debug\game.exe
+C:\Users\41373\2025-NJU-\map.h(4,9): error C1083: 无法打开包括文件: “easyx.h”: No such file or directory
+  (编译源文件“createmap.cpp”)
+  
+  createmap.h
+C:\Users\41373\2025-NJU-\map.h(4,9): error C1083: 无法打开包括文件: “easyx.h”: No such file or directory
+  (编译源文件“createmap.h”)
+  
+  gameover.cpp
+C:\Users\41373\2025-NJU-\gameover.cpp(2,10): error C1083: 无法打开包括文件: “define.h”: No such file or directory
+  main.cpp
+C:\Users\41373\2025-NJU-\main.cpp(2,9): error C1083: 无法打开包括文件: “easyx.h”: No such file or directory
+  map.cpp
+C:\Users\41373\2025-NJU-\map.cpp(2,9): error C1083: 无法打开包括文件: “easyx.h”: No such file or directory
+  messagescreen.cpp
+C:\Users\41373\2025-NJU-\messagescreen.cpp(1,9): error C1083: 无法打开包括文件: “easyx.h”: No such file or directory
+  正在生成代码...
