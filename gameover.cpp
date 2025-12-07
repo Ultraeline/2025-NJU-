@@ -69,12 +69,9 @@ void HandleGameOver() {
             score -= 5; // 死亡惩罚（可删）
             keynum = 0; // 重置当前关钥匙
 
-            // 重置当前关卡地图
-            map[currentMapIndex].MapPoint.clear();
-            CreateMap(map[currentMapIndex], currentMapIndex);
-
-            // 恢复BGM
-            audioManager.PlayBGM("normal.mp3");
+            for (int i = 0; i < MapNum; i++) {
+                CreateMap(gameMaps[i], i);
+            }
             break;
         }
 

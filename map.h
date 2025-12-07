@@ -18,6 +18,9 @@ extern bool running;
 extern int score;
 extern int keynum;
 extern bool isDead; // 标记玩家是否死亡
+Maps* gameMaps;
+
+
 
 class Maps   // 创建地图
 {
@@ -144,7 +147,6 @@ public:
 		void Move(Maps& map) override; //移动函数
 		void Interact(Maps& map);//判断与地图的交互
 		void IsAgainstObstcle(Maps& map) override;
-		void Die(); // 处理死亡逻辑
 
 	};
 

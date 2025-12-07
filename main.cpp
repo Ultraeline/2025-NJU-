@@ -10,13 +10,13 @@
 #include<memory>
 #include "BGM.h"
 #include "gameover.h"
-
+Maps* gameMaps;
 AudioManager audioManager;
 int main() {
 	srand((unsigned)time(NULL));
 	initgraph(ScreenLen + ExtraWidth, ScreenLen); //创建界面
 	settextstyle(20, 0, "宋体");
-	Maps* map = new Maps[5];
+	gameMaps = new Maps[5];
 	for (int i = 0; i < MapNum; i++)
 	{
 		CreateMap(map[i], i);
@@ -45,7 +45,7 @@ int main() {
 	}
 
 	// 清理资源
-	delete[]map;
+	delete[] gameMaps;
 	closegraph();  // 确保关闭图形界面
 	return 0;
 }
