@@ -1,0 +1,35 @@
+[33m59a6b3e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m xx
+[33mc59aa5b[m 解决冲突
+[33m3d71004[m xxx
+[33mb2221f1[m 死亡结算
+[33m21661e3[m 解决金币钥匙等会覆盖敌人的bug
+[33m735e677[m 重写追踪
+[33m6afc806[m map2
+[33mfff4b70[m 修改敌人移动函数
+[33me46a8ec[m 新增钥匙和门
+[33m2478c33[m 重写玩家移动函数
+[33mf8ffd2b[m Merge branch 'master' of github.com:Ultraeline/2025-NJU-
+[33mfe718f2[m xxx
+[33mda7c49b[m Merge branch 'master' of https://github.com/Ultraeline/2025-NJU-
+[33mc0faa14[m see函数考虑墙的视线遮挡
+[33m0f82911[m 修改跟踪代码
+[33mb30f5eb[m 添加音乐
+[33mfb8e24e[m 添加音乐
+[33m66d7c71[m little changes
+[33m60850f0[m little change
+[33m938b5c7[m 增加see函数
+[33m38abe36[m 增加see
+[33m350e9d6[m 增加追踪功能
+[33m8a6db5d[m 忽略.vs
+[33md86f05a[m 删除.vs
+[33m20d8357[m 更改map2
+[33mab2aa26[m 新增金币和信息界面
+[33m9aa25a0[m 初始化地图
+[33mbecbf31[m 添加注释，简化地图创建
+[33m7c9ddf2[m Merge branch 'master' of github.com:Ultraeline/2025-NJU-
+[33m9a21f77[m done?
+[33mefb9781[m big changes
+[33m913d7bc[m 移除SSH私钥文件
+[33mf442c66[m 添加.gitignore排除敏感文件
+[33m7dc6a6d[m big changes
+[33m2722e40[m 大刀阔斧的修改
