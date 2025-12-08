@@ -16,7 +16,10 @@ constexpr int MapNum = 5;
 extern int mapindex;
 extern bool running;
 extern int score;
+extern int pre_score;
 extern int keynum;
+extern bool isDead; // 标记玩家是否死亡
+
 
 class Maps   // 创建地图
 {
@@ -149,7 +152,7 @@ public:
 	class Enemy : public Character //创建敌人
 	{
 	private:
-		int PlayerX = 0, PlayerY = 0;
+		int PlayerX = 0, PlayerY = 0, seePlayerX = 0, seePlayerY = 0;
 		
 
 	public:

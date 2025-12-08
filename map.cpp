@@ -9,7 +9,9 @@
 
 int mapindex = 0;
 int score = 0;
+int pre_score = 0;
 int keynum = 0;
+bool isDead = false; // 初始化玩家未死亡
 bool running = true;
 int tempcount = 0;
 bool lastW = false, lastA = false, lastS = false, lastD = false;
@@ -160,6 +162,7 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 		{   
 			mapindex++;
 			score += 10;
+			pre_score = score;
 		}
 		else if (TouchCoin)
 		{
@@ -178,6 +181,10 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 			keynum--;
 			map.MapPoint.erase(map.MapPoint.begin() + i);
 			--i;
+		}
+		if (TouchEnemy)
+		{
+			isDead = true; // 标记玩家死亡
 		}
 
 
@@ -252,7 +259,6 @@ std::unique_ptr<Maps::Point> Maps::Enemy::clone() const //克隆函数，用于将类存入
 
 bool Maps::Enemy::See(Maps& map) {
 	// 找玩家的位置
-	int PlayerX = 0, PlayerY = 0;
 	for (int i = 0; i < map.MapPoint.size(); i++) {
 		if (map.MapPoint[i]->GetType() == map.player) {
 			PlayerX = map.MapPoint[i]->m_x;
@@ -308,23 +314,17 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	UpMove = true;
 	DownMove = true;
 	bool ChangeSafe = false;
-	if (m_x == PlayerX && m_y == PlayerY || (m_moveCount - tempcount) % 4 == 0)
+	if (m_x == seePlayerX && m_y == seePlayerY || (m_moveCount - tempcount) % 30 == 0)
 		ChangeSafe = true;
 	IsAgainstObstcle(map);
 	if (See(map))
 	{
+		seePlayerX = PlayerX;
+		seePlayerY = PlayerY;
 		tempcount = m_moveCount;
 		bool ChangeSafe = false;
 		CurrentBehavior = Danger;
 		m_color = ColorDanger;
-		for (int i = 0; i < map.MapPoint.size(); i++)
-		{
-			if (map.MapPoint[i]->GetType() == map.player)
-			{
-				PlayerX = map.MapPoint[i]->m_x;
-				PlayerY = map.MapPoint[i]->m_y;
-			}
-		}
 	}
 	else if(!See(map) && ChangeSafe)
 	{
@@ -361,12 +361,12 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 		
 		if (m_moveCount % 3 == 0)
 		{
-			if (m_x - PlayerX >= 0 && m_y - PlayerY >= 0)
+			if (m_x - seePlayerX >= 0 && m_y - seePlayerY >= 0)
 			{
-				if (m_x - PlayerX > m_y - PlayerY)
+				if (m_x - seePlayerX > m_y - seePlayerY)
 				{
 					if (LeftMove) m_x -= CharLen;
-					else m_y -= CharLen;
+					else if(UpMove) m_y -= CharLen;
 				}
 				else
 				{
@@ -374,12 +374,12 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 					else if (LeftMove) m_x -= CharLen;
 				}
 			}
-			else if (m_x - PlayerX >= 0 && m_y - PlayerY <= 0)
+			else if (m_x - seePlayerX >= 0 && m_y - seePlayerY <= 0)
 			{
-				if (m_x - PlayerX > PlayerY - m_y)
+				if (m_x - seePlayerX > seePlayerY - m_y)
 				{
 					if (LeftMove) m_x -= CharLen;
-					else m_y += CharLen;
+					else if(DownMove) m_y += CharLen;
 				}
 				else
 				{
@@ -387,9 +387,9 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 					else if(LeftMove) m_x -= CharLen;
 				}
 			}
-			else if (m_x - PlayerX <= 0 && m_y - PlayerY >= 0)
+			else if (m_x - seePlayerX <= 0 && m_y - seePlayerY >= 0)
 			{
-				if ( PlayerX - m_x> m_y - PlayerY)
+				if (seePlayerX - m_x> m_y - seePlayerY)
 				{
 					if (RightMove) m_x += CharLen;
 					else if(UpMove) m_y -= CharLen;
@@ -400,9 +400,9 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 					else if(RightMove) m_x += CharLen;
 				}
 			}
-			else if (m_x - PlayerX <= 0 && m_y - PlayerY <= 0)
+			else if (m_x - seePlayerX <= 0 && m_y - seePlayerY <= 0)
 			{
-				if ( PlayerX - m_x > PlayerY - m_y)
+				if (seePlayerX - m_x > seePlayerY - m_y)
 				{
 					if (RightMove) m_x += CharLen;
 					else if(DownMove)m_y += CharLen;
@@ -412,11 +412,6 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 					if (DownMove) m_y += CharLen;
 					else if (RightMove)m_x  += CharLen;
 				}
-			}
-			else
-			{
-				ChangeSafe = true;
-				CurrentBehavior = Safe;
 			}
 		}
 

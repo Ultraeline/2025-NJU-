@@ -9,13 +9,14 @@
 #include "messagescreen.h"
 #include<memory>
 #include "BGM.h"
-
+#include "gameover.h"
+Maps* map;
 AudioManager audioManager;
 int main() {
-	srand((unsigned) time(NULL));
+	srand((unsigned)time(NULL));
 	initgraph(ScreenLen + ExtraWidth, ScreenLen); //创建界面
-	settextstyle(20, 0, "宋体"); 
-	Maps* map = new Maps[5];
+	settextstyle(20, 0, "宋体");
+	map = new Maps[5];
 	for (int i = 0; i < MapNum; i++)
 	{
 		CreateMap(map[i], i);
@@ -23,23 +24,30 @@ int main() {
 	audioManager.PlayBGM("normal.mp3");
 	cleardevice();
 
-	while (running)
-	{
+	while (running) {
 		BeginBatchDraw();
-		cleardevice();
-		map[mapindex].MoveAll(map[mapindex]);
-		map[mapindex].DrawMap();
-		DrawMessage();
+		cleardevice(); // 清空画布
+
+		if (isDead) {
+			// 死亡时进入结算逻辑，结算完自动重置isDead/running
+			HandleGameOver();
+		}
+		else {
+			// 正常游戏逻辑：移动元素 + 绘制地图 + 绘制信息
+			map[mapindex].MoveAll(map[mapindex]);
+			map[mapindex].DrawMap();
+			DrawMessage(); // 绘制分数、钥匙等
+		}
+
 		FlushBatchDraw();
-		Sleep(40);
+		EndBatchDraw();
+		Sleep(40); // 控制帧率（可调整，数值越小越流畅）
 	}
 
-	EndBatchDraw();
-
-	delete[]map;
-
+	// 清理资源
+	delete[] map;
+	closegraph();  // 确保关闭图形界面
 	return 0;
-
 }
 
 

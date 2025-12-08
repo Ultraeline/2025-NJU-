@@ -310,7 +310,6 @@ void CreateMap(Maps& map, int index) //´´½¨map1
 			}
 		}
 	}
-	auto it = std::partition(map.MapPoint.begin(), map.MapPoint.end(), [](const std::unique_ptr<Maps::Point>& x) { return x->GetType() != Maps::enemy; });
 
 }
 
