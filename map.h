@@ -8,8 +8,8 @@
 #include <time.h>
 #include<memory>
 
-constexpr int ScreenLen = 1000; //游戏界面长宽均为1000像素
-constexpr int CharLen = 20;//字体长宽为20像素
+constexpr int ScreenLen = 800; //游戏界面长宽均为1000像素
+constexpr int CharLen = 16;//字体长宽为20像素
 constexpr int ExtraWidth = 300;
 constexpr int Len = ScreenLen / CharLen;
 constexpr int MapNum = 5;

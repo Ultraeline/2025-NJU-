@@ -115,10 +115,10 @@ void Maps::Player::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
 {
 	for (int i = 0; i < map.MapPoint.size(); i++)
 	{
-		if (m_x + 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) RightMove = false;
-		if (m_x - 20 == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) LeftMove = false;
-		if (m_y - 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) UpMove = false;
-		if (m_y + 20 == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) DownMove = false;
+		if (m_x + CharLen == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) RightMove = false;
+		if (m_x - CharLen == map.MapPoint[i] -> m_x && m_y == map.MapPoint[i] -> m_y && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) LeftMove = false;
+		if (m_y - CharLen == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) UpMove = false;
+		if (m_y + CharLen == map.MapPoint[i] -> m_y && m_x == map.MapPoint[i] -> m_x && (map.MapPoint[i]->GetType() == map.obstacle || (map.MapPoint[i]->GetType() == map.door && keynum <= 0))) DownMove = false;
 	}
 }
 
@@ -126,10 +126,10 @@ void Maps::Enemy::IsAgainstObstcle(Maps& map)//用于判断是否靠着墙壁
 {
 	for (int i = 0; i < map.MapPoint.size(); i++)
 	{
-		if (m_x + 20 == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) RightMove = false;
-		if (m_x - 20 == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) LeftMove = false;
-		if (m_y - 20 == map.MapPoint[i]->m_y && m_x == map.MapPoint[i]->m_x && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) UpMove = false;
-		if (m_y + 20 == map.MapPoint[i]->m_y && m_x == map.MapPoint[i]->m_x && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) DownMove = false;
+		if (m_x + CharLen == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) RightMove = false;
+		if (m_x - CharLen == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) LeftMove = false;
+		if (m_y - CharLen == map.MapPoint[i]->m_y && m_x == map.MapPoint[i]->m_x && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) UpMove = false;
+		if (m_y + CharLen == map.MapPoint[i]->m_y && m_x == map.MapPoint[i]->m_x && (map.MapPoint[i]->GetType() == map.obstacle || map.MapPoint[i]->GetType() == map.door)) DownMove = false;
 	}
 }
 

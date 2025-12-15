@@ -15,7 +15,7 @@ AudioManager audioManager;
 int main() {
 	srand((unsigned)time(NULL));
 	initgraph(ScreenLen + ExtraWidth, ScreenLen); //创建界面
-	settextstyle(20, 0, "宋体");
+	settextstyle(CharLen, 0, "宋体");
 	map = new Maps[5];
 	for (int i = 0; i < MapNum; i++)
 	{
@@ -25,6 +25,7 @@ int main() {
 	cleardevice();
 
 	while (running) {
+		settextstyle(CharLen, 0, "宋体");
 		BeginBatchDraw();
 		cleardevice(); // 清空画布
 
