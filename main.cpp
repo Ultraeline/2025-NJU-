@@ -10,11 +10,16 @@
 #include<memory>
 #include "BGM.h"
 #include "gameover.h"
+#include"cleargame.h"
+
 Maps* map;
 AudioManager audioManager;
+int mapindex = 0;
+
 int main() {
 	srand((unsigned)time(NULL));
 	initgraph(ScreenLen + ExtraWidth, ScreenLen); //创建界面
+	const int FPS = 25;//设置为25帧
 	settextstyle(CharLen, 0, "宋体");
 	map = new Maps[5];
 	for (int i = 0; i < MapNum; i++)
@@ -25,6 +30,8 @@ int main() {
 	cleardevice();
 
 	while (running) {
+		DWORD frame_start_time = GetTickCount();//用于控制帧率
+
 		settextstyle(CharLen, 0, "宋体");
 		BeginBatchDraw();
 		cleardevice(); // 清空画布
@@ -32,6 +39,10 @@ int main() {
 		if (isDead) {
 			// 死亡时进入结算逻辑，结算完自动重置isDead/running
 			HandleGameOver();
+		}
+		else if (isPass)
+		{
+			HandlePassGame();
 		}
 		else {
 			// 正常游戏逻辑：移动元素 + 绘制地图 + 绘制信息
@@ -42,7 +53,11 @@ int main() {
 
 		FlushBatchDraw();
 		EndBatchDraw();
-		Sleep(40); // 控制帧率（可调整，数值越小越流畅）
+		DWORD frame_end_time = GetTickCount();
+		DWORD frame_delta_time = frame_end_time - frame_start_time;
+
+		if (frame_delta_time < 1000 / FPS)
+			Sleep(1000 / FPS - frame_delta_time);
 	}
 
 	// 清理资源

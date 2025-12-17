@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BGM.cpp" />
+    <ClCompile Include="cleargame.cpp" />
     <ClCompile Include="createmap.cpp" />
     <ClCompile Include="createmap.h" />
     <ClCompile Include="gameover.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="messagescreen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cleargame.h" />
     <ClInclude Include="gameover.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="messagescreen.h" />

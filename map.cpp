@@ -7,7 +7,7 @@
 #include "map.h"
 #include<memory>
 
-int mapindex = 0;
+
 int score = 0;
 int pre_score = 0;
 int keynum = 0;
@@ -16,6 +16,7 @@ bool running = true;
 int tempcount = 0;
 bool lastW = false, lastA = false, lastS = false, lastD = false;
 char lastPressedKey = 0;
+bool isPass = false;
 
 Maps::Point::Point(int x, int y) :
 	m_x(x), m_y(y) {}
@@ -158,11 +159,18 @@ void Maps::Player::Interact(Maps& map) //与地图的交互，如逃出出口或碰到鬼
 		else if (m_x == map.MapPoint[i]->m_x && m_y == map.MapPoint[i]->m_y && map.MapPoint[i]->GetType() == map.door)
 			TouchDoor = true;
 
-		if (TouchExit && mapindex < MapNum - 1)
+		if (TouchExit)
 		{   
-			mapindex++;
-			score += 10;
-			pre_score = score;
+			if(mapindex < MapNum - 1)
+			{
+				mapindex++;
+				score += 10;
+				pre_score = score;
+			}
+			else
+			{
+				isPass = true;
+			}
 		}
 		else if (TouchCoin)
 		{
@@ -314,7 +322,7 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	UpMove = true;
 	DownMove = true;
 	bool ChangeSafe = false;
-	if (m_x == seePlayerX && m_y == seePlayerY || (m_moveCount - tempcount) % 30 == 0)
+	if (m_x == seePlayerX && m_y == seePlayerY || (m_moveCount - tempcount) %  20 == 0)
 		ChangeSafe = true;
 	IsAgainstObstcle(map);
 	if (See(map))
@@ -332,7 +340,7 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 		m_color = ColorSafe;
 	}
 
-	if (CurrentBehavior == Safe && m_moveCount % 4 == 0) //使鬼随机移动，且降低移动速度，并且尽量降低移动方向的随机性，使其移动不会过于杂乱
+	if (CurrentBehavior == Safe && m_moveCount % 8 == 0) //使鬼随机移动，且降低移动速度，并且尽量降低移动方向的随机性，使其移动不会过于杂乱
 	{
 		if (rand() % 4 == 0 ||
 			(m_currentDirection == Right && !RightMove) ||
@@ -359,7 +367,7 @@ void Maps::Enemy::Move(Maps& map)//敌人的移动逻辑，可能需要运用追踪算法
 	else if (CurrentBehavior == Danger)
 	{
 		
-		if (m_moveCount % 3 == 0)
+		if (m_moveCount % 4 == 0)
 		{
 			if (m_x - seePlayerX >= 0 && m_y - seePlayerY >= 0)
 			{

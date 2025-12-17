@@ -19,6 +19,7 @@ extern int score;
 extern int pre_score;
 extern int keynum;
 extern bool isDead; // 标记玩家是否死亡
+extern bool isPass;
 
 
 class Maps   // 创建地图
